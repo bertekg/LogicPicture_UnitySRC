@@ -1,2 +1,2 @@
 # LogicPicture
- Picture logic puzzle game. Your gole are colored grid according to number at the side.
+ Logic picture puzzle game. Your goal is to color grid according to number on the side.
