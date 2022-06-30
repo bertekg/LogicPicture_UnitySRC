@@ -352,7 +352,11 @@ PrefabInstance:
     - target: {fileID: -7415324808119085742, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: jsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 35b1f832aee0f7f47ac1a080453d38c2, type: 3}
+      objectReference: {fileID: 4900000, guid: 63b645ded944b064cb1effc87a916238, type: 3}
+    - target: {fileID: 5607021378223813658, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -419,11 +423,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -286
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 117
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -440,6 +444,10 @@ PrefabInstance:
     - target: {fileID: 7196215423463690233, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_Name
       value: Single Level Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196215423463690233, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
@@ -669,7 +677,7 @@ PrefabInstance:
     - target: {fileID: -7415324808119085742, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: jsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 1af0525abeca6cc4487a492ac8257b94, type: 3}
+      objectReference: {fileID: 4900000, guid: 3752ffc31782d5f4f8ee5c376210511a, type: 3}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -757,6 +765,10 @@ PrefabInstance:
     - target: {fileID: 7196215423463690233, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_Name
       value: Single Level Button (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196215423463690233, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
@@ -1109,7 +1121,7 @@ PrefabInstance:
     - target: {fileID: -7415324808119085742, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: jsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 493f2089591bc93468e7b204066e1e79, type: 3}
+      objectReference: {fileID: 4900000, guid: cdb5a9ee87272e641b7c5b640fb2b539, type: 3}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1176,11 +1188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 281
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 117
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1197,6 +1209,10 @@ PrefabInstance:
     - target: {fileID: 7196215423463690233, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_Name
       value: Single Level Button (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196215423463690233, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
