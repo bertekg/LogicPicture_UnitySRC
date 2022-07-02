@@ -352,7 +352,7 @@ PrefabInstance:
     - target: {fileID: -7415324808119085742, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: jsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 63b645ded944b064cb1effc87a916238, type: 3}
+      objectReference: {fileID: 4900000, guid: f492d3d312099bd48938b5e7fdbb3d0e, type: 3}
     - target: {fileID: 5607021378223813658, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1121,7 +1121,7 @@ PrefabInstance:
     - target: {fileID: -7415324808119085742, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: jsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: cdb5a9ee87272e641b7c5b640fb2b539, type: 3}
+      objectReference: {fileID: 4900000, guid: ed008a77ffb2118409ee9778d20b8d98, type: 3}
     - target: {fileID: 6496520732899442940, guid: d1ab870cdabe50f4daf44a27277eda4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

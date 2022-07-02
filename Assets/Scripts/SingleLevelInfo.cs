@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
-using Newtonsoft.Json;
+using System.Xml;
+using System.IO;
+using System.Xml.Serialization;
+using System;
 
 public class SingleLevelInfo : MonoBehaviour
 {
@@ -11,7 +14,22 @@ public class SingleLevelInfo : MonoBehaviour
 
     void Start()
     {
-        singleLevel = JsonConvert.DeserializeObject<SingleLevel>(jsonFile.text);
+        //singleLevel = JsonConvert.DeserializeObject<SingleLevel>(jsonFile.text);
+        XmlDocument xmlDocument = new XmlDocument();
+        xmlDocument.Load(new StringReader(jsonFile.text));
+        string xmlString = xmlDocument.OuterXml;
+        using (StringReader read = new StringReader(xmlString))
+        {
+            Type outType = typeof(SingleLevel);
+
+            XmlSerializer serializer = new XmlSerializer(outType);
+            using (XmlReader reader = new XmlTextReader(read))
+            {
+                singleLevel = (SingleLevel)serializer.Deserialize(reader);
+                reader.Close();
+            }
+            read.Close();
+        }
         buttonText.text = singleLevel.NameEnglish + "\nWidth: " + singleLevel.LevelData.WidthX + "\nHeight: " + singleLevel.LevelData.HeightY;
         ShowLevelDataInDebug();
     }
