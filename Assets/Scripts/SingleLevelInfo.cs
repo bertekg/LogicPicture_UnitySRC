@@ -30,13 +30,16 @@ public class SingleLevelInfo : MonoBehaviour
             }
             read.Close();
         }
-        buttonText.text = singleLevel.NameEnglish + "\nWidth: " + singleLevel.LevelData.WidthX + "\nHeight: " + singleLevel.LevelData.HeightY;
+        buttonText.text = singleLevel.ProjectStoryEN.Title + "\nWidth: " + singleLevel.LevelData.WidthX +
+            "\nHeight: " + singleLevel.LevelData.HeightY + "\nDescription:\n" + singleLevel.ProjectStoryEN.Description;
         ShowLevelDataInDebug();
     }
     void ShowLevelDataInDebug()
     {
-        Debug.Log($"Level name (English): [{singleLevel.NameEnglish}]");
-        Debug.Log($"Level name (Polish): [{singleLevel.NamePolish}]");
+        Debug.Log($"Project Title (English): [{singleLevel.ProjectStoryEN.Title}]");
+        Debug.Log($"Project Description (English): [{singleLevel.ProjectStoryEN.Description}]");
+        Debug.Log($"Project Title (Polish): [{singleLevel.ProjectStoryPL.Title}]");
+        Debug.Log($"Project Description (Polish): [{singleLevel.ProjectStoryPL.Description}]");
         Debug.Log("Count of 'TilesData': " + singleLevel.LevelData.TilesData.Count);
         Debug.Log("Count of 'ColorsDataTiles': " + singleLevel.LevelData.ColorsDataTiles.Count);
         Debug.Log("Count of 'HintsDataHorizontal': " + singleLevel.LevelData.HintsDataHorizontal.Count);
