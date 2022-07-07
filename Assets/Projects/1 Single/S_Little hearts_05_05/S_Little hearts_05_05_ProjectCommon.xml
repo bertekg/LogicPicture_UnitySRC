@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectCommon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectStoryEN>
+    <Title>Little hearts</Title>
+    <Description>The smallest heart it can create.
+But that doesn't mean it's weak. ❤</Description>
+  </ProjectStoryEN>
+  <ProjectStoryPL>
+    <Title>Małe serduszka</Title>
+    <Description>Najmniejsze serduszko jakie może stworzyć.
+Ale nie oznacza to że jest słabiutkie. ❤</Description>
+  </ProjectStoryPL>
+</ProjectCommon>

@@ -4,46 +4,82 @@ using System.Xml;
 using System.IO;
 using System.Xml.Serialization;
 using System;
+using UnityEngine.UI;
 
 public class SingleLevelInfo : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI buttonText;
-    [SerializeField] TextAsset jsonFile;
+    [SerializeField] TextMeshProUGUI titleText;
+    [SerializeField] Image levelPicture;
+    [SerializeField] TextMeshProUGUI descriptionText;
+    [SerializeField] Sprite defaultPicture;
+
+    [SerializeField] SingleSO singleSO;
     
-    private SingleLevel singleLevel;
+    private Level level;
 
     void Start()
     {
-        //singleLevel = JsonConvert.DeserializeObject<SingleLevel>(jsonFile.text);
+        ChangeToResoult(true);
+    }
+    private void ContentUpadateEN()
+    {
+        ContentUpadate(singleSO.GetProjectStoryEN());
+    }
+    private void ContentUpadatePL()
+    {
+        ContentUpadate(singleSO.GetProjectStoryPL());
+    }
+    private void ContentUpadate(ProjectStory projectStory)
+    {
+        titleText.text = projectStory.Title;
+        descriptionText.text = projectStory.Description;
+    }
+    public void ContentUpadate(Language language)
+    {
+        if (language == Language.EN)
+        {
+            ContentUpadateEN();
+        }
+        else if(language == Language.PL)
+        {
+            ContentUpadatePL();
+        }
+    }
+    public void ChangeToResoult(bool isSolve)
+    {
+        if (isSolve)
+        {
+            levelPicture.sprite = singleSO.GetLevelPicture();
+            ContentUpadateEN();
+        }
+        else
+        {
+            levelPicture.sprite = defaultPicture;
+            titleText.text = "??";
+            descriptionText.text = "???";
+        }
+    }
+    public void ShowLevelDetail()
+    {
         XmlDocument xmlDocument = new XmlDocument();
-        xmlDocument.Load(new StringReader(jsonFile.text));
+        xmlDocument.Load(new StringReader(singleSO.GetLevelDataXml()));
         string xmlString = xmlDocument.OuterXml;
         using (StringReader read = new StringReader(xmlString))
         {
-            Type outType = typeof(SingleLevel);
+            Type outType = typeof(Level);
 
             XmlSerializer serializer = new XmlSerializer(outType);
             using (XmlReader reader = new XmlTextReader(read))
             {
-                singleLevel = (SingleLevel)serializer.Deserialize(reader);
+                level = (Level)serializer.Deserialize(reader);
                 reader.Close();
             }
             read.Close();
         }
-        buttonText.text = singleLevel.ProjectStoryEN.Title + "\nWidth: " + singleLevel.LevelData.WidthX +
-            "\nHeight: " + singleLevel.LevelData.HeightY + "\nDescription:\n" + singleLevel.ProjectStoryEN.Description;
-        ShowLevelDataInDebug();
-    }
-    void ShowLevelDataInDebug()
-    {
-        Debug.Log($"Project Title (English): [{singleLevel.ProjectStoryEN.Title}]");
-        Debug.Log($"Project Description (English): [{singleLevel.ProjectStoryEN.Description}]");
-        Debug.Log($"Project Title (Polish): [{singleLevel.ProjectStoryPL.Title}]");
-        Debug.Log($"Project Description (Polish): [{singleLevel.ProjectStoryPL.Description}]");
-        Debug.Log("Count of 'TilesData': " + singleLevel.LevelData.TilesData.Count);
-        Debug.Log("Count of 'ColorsDataTiles': " + singleLevel.LevelData.ColorsDataTiles.Count);
-        Debug.Log("Count of 'HintsDataHorizontal': " + singleLevel.LevelData.HintsDataHorizontal.Count);
-        Debug.Log("Count of 'HintsDataVertical': " + singleLevel.LevelData.HintsDataVertical.Count);
+        Debug.Log("Count of 'TilesData': " + level.TilesData.Count);
+        Debug.Log("Count of 'ColorsDataTiles': " + level.ColorsDataTiles.Count);
+        Debug.Log("Count of 'HintsDataHorizontal': " + level.HintsDataHorizontal.Count);
+        Debug.Log("Count of 'HintsDataVertical': " + level.HintsDataVertical.Count);
         Debug.Log("*-*-*");
     }
 }

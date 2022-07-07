@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65dbb2ab0b149464da2840a213e61d61, type: 3}
-  m_Name: New Single
+  m_Name: S_Smile_15_15
   m_EditorClassIdentifier: 
   storyEN:
-    Title: 
-    Description: 
+    Title: Smile
+    Description: Nice green face full of smiles :)
   storyPL:
-    Title: 
-    Description: "Przyk\u0142adowy opis jakiego\u015B obiektu,\r\nmo\u017Cna go w
-      pe\u0142ni modyfikowa\u0107 i powstaj\u0105\r\nsuper rzecz z tego :) ssdasd
-      sdsdas dsa ads ds ads dssadads dsasdadsasd  dsads\nDodatkow ten tekst jest "
-  level: {fileID: 0}
-  image: {fileID: 0}
+    Title: "U\u015Bmiech"
+    Description: "\u0141adna zielona twarz pe\u0142na u\u015Bmiech :)"
+  level: {fileID: 4900000, guid: f1bfb700305653943b14ca35fa00d64f, type: 3}
+  sprite: {fileID: 21300000, guid: d5c987fb87d6083478a2d00589fab7ab, type: 3}

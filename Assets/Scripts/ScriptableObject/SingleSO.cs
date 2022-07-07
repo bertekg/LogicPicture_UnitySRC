@@ -9,5 +9,22 @@ public class SingleSO : ScriptableObject
     [SerializeField] ProjectStory storyEN;
     [SerializeField] ProjectStory storyPL;
     [SerializeField] TextAsset level;
-    [SerializeField] Image image;
+    [SerializeField] Sprite sprite;
+    
+    public ProjectStory GetProjectStoryEN()
+    {
+        return storyEN;
+    }
+    public ProjectStory GetProjectStoryPL()
+    {
+        return storyPL;
+    }
+    public string GetLevelDataXml()
+    {
+        return level.text;
+    }
+    public Sprite GetLevelPicture()
+    {
+        return sprite;
+    }
 }
