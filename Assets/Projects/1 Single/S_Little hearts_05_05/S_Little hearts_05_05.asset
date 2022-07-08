@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyEN:
     Title: Little hearts
-    Description: "The smallest heart it can create.\r\nBut that doesn't mean it's
-      weak. \u2764"
+    Description: 'The smallest heart it can create.
+
+      But that doesn''t mean
+      it''s weak.'
   storyPL:
     Title: "Ma\u0142e serduszka"
     Description: "Najmniejsze serduszko jakie mo\u017Ce stworzy\u0107.\r\nAle nie
-      oznacza to \u017Ce jest s\u0142abiutkie. \u2764"
+      oznacza to \u017Ce jest s\u0142abiutkie."
   level: {fileID: 4900000, guid: 6b120e746932c5848ab00bb6d48ce3bb, type: 3}
   sprite: {fileID: 21300000, guid: 575db86d430987f4fa53426c8852348e, type: 3}
