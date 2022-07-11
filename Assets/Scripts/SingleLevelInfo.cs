@@ -82,4 +82,10 @@ public class SingleLevelInfo : MonoBehaviour
         Debug.Log("Count of 'HintsDataVertical': " + level.HintsDataVertical.Count);
         Debug.Log("*-*-*");
     }
+    public void LoadLevel()
+    {
+        LevelDataGame levelDataGame = FindObjectOfType<LevelDataGame>();
+        SaveableEntity saveableEntity = GetComponent<SaveableEntity>();
+        levelDataGame.SetLevel(level, levelPicture.sprite, titleText.text, descriptionText.text, saveableEntity.Id);
+    }
 }

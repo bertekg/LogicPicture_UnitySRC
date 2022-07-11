@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SingleLevelSelection.unity
     guid: 9bcf8167d7545924babe3f4c5d713c2c
+  - enabled: 1
+    path: Assets/Scenes/LevelGame.unity
+    guid: d926174dd831b7348834d4242bfc7991
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 1e17b2fb3212a3e489a1e352eac79a20, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: eaeae0d6dfcb62c44a5d91ca59fbfbc8, type: 2}
