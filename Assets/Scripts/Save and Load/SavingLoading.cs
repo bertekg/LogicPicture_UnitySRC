@@ -28,6 +28,19 @@ public class SavingLoading : MonoBehaviour
         var state = LoadFile();
         RestoreState(state);
     }
+    public void SaveThisLevel(string id, int numberOfErrors)
+    {
+        var state = LoadFile();
+        object obj1 = state[id];
+        System.Type type = obj1.GetType();
+        Dictionary<string, object> saveDict = (Dictionary<string, object>)obj1;
+        SaveData saveData = (SaveData)saveDict["LevelSystem"];
+        saveData.isFinished = true;
+        saveData.errorCount = numberOfErrors;
+        saveDict["LevelSystem"] = saveData;
+        state[id] = saveDict;
+        SaveFile(state);
+    }
     private Dictionary<string, object> LoadFile()
     {
         if (!File.Exists(SavePath))

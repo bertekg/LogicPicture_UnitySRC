@@ -22,12 +22,12 @@ public class LevelSystem : MonoBehaviour, ISaveable
 
         IsFinished = saveData.isFinished;
         ErrorCount = saveData.errorCount;
-    }
+    }    
+}
 
-    [Serializable]
-    private struct SaveData
-    {
-        public bool isFinished;
-        public int errorCount;
-    }
+[Serializable]
+public struct SaveData
+{
+    public bool isFinished;
+    public int errorCount;
 }
