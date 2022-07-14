@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +18,10 @@ public class LevelDataGame : MonoBehaviour
         id = idLevel;
         DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene("LevelGame");
+    }
+    public Level GetFullLevel()
+    {
+        return level;
     }
     public byte GetLevelWidth()
     {

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -31,10 +30,19 @@ public class SavingLoading : MonoBehaviour
     public void SaveThisLevel(string id, int numberOfErrors)
     {
         var state = LoadFile();
-        object obj1 = state[id];
-        System.Type type = obj1.GetType();
-        Dictionary<string, object> saveDict = (Dictionary<string, object>)obj1;
-        SaveData saveData = (SaveData)saveDict["LevelSystem"];
+        SaveData saveData;
+        Dictionary<string, object> saveDict = new Dictionary<string, object>();
+        if (state.ContainsKey(id))
+        {
+            object obj1 = state[id];
+            saveDict = (Dictionary<string, object>)obj1;
+            saveData = (SaveData)saveDict["LevelSystem"];
+        }
+        else
+        {
+            saveData = new SaveData();
+            saveDict.Add("LevelSystem", null);
+        }
         saveData.isFinished = true;
         saveData.errorCount = numberOfErrors;
         saveDict["LevelSystem"] = saveData;
