@@ -13,11 +13,11 @@ public class LevelInfo : MonoBehaviour
     void Start()
     {
         LevelDataGame levelDataGame = FindObjectOfType<LevelDataGame>();
-        levelWidth.text = levelDataGame.GetLevelWidth().ToString();
-        levelHeight.text = levelDataGame.GetLevelHeight().ToString();
-        levelTitle.text = levelDataGame.GetTitle();
-        levelDescription.text = levelDataGame.GetDescription();
+        levelWidth.text = "Width: " + levelDataGame.GetLevelWidth().ToString();
+        levelHeight.text = "Heigh: " + levelDataGame.GetLevelHeight().ToString();
+        levelTitle.text = "Title: " + levelDataGame.GetTitle();
+        levelDescription.text = "Description:\n" + levelDataGame.GetDescription();
         finalImage.sprite = levelDataGame.GetFinalPictureSprite();
-        levelId.text = levelDataGame.GetID();
+        levelId.text = "ID:\n" + levelDataGame.GetID();
     }
 }

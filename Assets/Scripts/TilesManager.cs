@@ -3,27 +3,25 @@ using UnityEngine.UI;
 
 public class TilesManager : MonoBehaviour
 {
-    [SerializeField] Canvas canvasData;
+    [SerializeField] GameObject mainPanel;
     [SerializeField] Image cellPrefab;
     [SerializeField] Text textPrefab;
     [SerializeField] Image colorPrefab;
     [SerializeField] GameObject colorPanel;
 
-    private GameObject panel;
     private Level level;
 
     void Start()
     {
         Level level = FindObjectOfType<LevelDataGame>().GetFullLevel();
-        panel = new GameObject();
-        panel.name = "MainPanel";
-        panel.AddComponent<CanvasRenderer>();
-        panel.AddComponent<RectTransform>();
+        //mainPanel = new GameObject();
+        //mainPanel.AddComponent<CanvasRenderer>();
+        //mainPanel.AddComponent<RectTransform>();
         float anchorMinY = (0.6f * (float)Screen.width) / (float)Screen.height;
-        panel.GetComponent<RectTransform>().anchorMin = new Vector2(0, anchorMinY);
-        panel.GetComponent<RectTransform>().anchorMax = new Vector2(1, 0.94f);
-        panel.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
-        panel.GetComponent<RectTransform>().pivot = new Vector2(0, 0);
+        mainPanel.GetComponent<RectTransform>().anchorMin = new Vector2(0, anchorMinY);
+        mainPanel.GetComponent<RectTransform>().anchorMax = new Vector2(1, 0.94f);
+        mainPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
+        mainPanel.GetComponent<RectTransform>().pivot = new Vector2(0, 0);
         float panelHeight = 0.94f * (float)Screen.height - (0.6f * (float)Screen.width);
         float panelWidth = (float)Screen.width;
         float offsetHeight = 0, offsetWidth = 0;
@@ -54,9 +52,8 @@ public class TilesManager : MonoBehaviour
             basicTileScale = panelHeight / (level.HeightY + maxHorizontalHint);
             offsetWidth = panelWidth - (basicTileScale * (level.WidthX + maxVerticalHint));
         }
-        panel.AddComponent<Image>();
-        panel.GetComponent<Image>().color = GetColorFromColorData(level.ColorDataBackground);
-        panel.transform.SetParent(canvasData.transform, false);
+        mainPanel.AddComponent<Image>();
+        mainPanel.GetComponent<Image>().color = GetColorFromColorData(level.ColorDataBackground);
         for (int i = 0; i < level.WidthX; i++)
         {
             for (int j = 0; j < level.HeightY; j++)
@@ -69,7 +66,7 @@ public class TilesManager : MonoBehaviour
                 
                 cellInstatiate.transform.position = new Vector3((offsetWidth / 2) + (maxVerticalHint + i) * basicTileScale, (offsetHeight / 2) + j * basicTileScale);
                 cellInstatiate.GetComponent<RectTransform>().sizeDelta = new Vector2(basicTileScale, basicTileScale);
-                cellInstatiate.transform.SetParent(panel.transform, false);
+                cellInstatiate.transform.SetParent(mainPanel.transform, false);
             }
         }
         for (int i = 0; i < level.HeightY; i++)
@@ -83,7 +80,7 @@ public class TilesManager : MonoBehaviour
                 textInstantiateVertical.color = GetColorFromColorData(level.ColorsDataTiles[colorId]);
                 textInstantiateVertical.transform.position = new Vector3((offsetWidth / 2) + (maxVerticalHint - level.HintsDataVertical[i].Count + j) * basicTileScale, (offsetHeight / 2) + i * basicTileScale);
                 textInstantiateVertical.GetComponent<RectTransform>().sizeDelta = new Vector2(basicTileScale, basicTileScale);
-                textInstantiateVertical.transform.SetParent(panel.transform, false);
+                textInstantiateVertical.transform.SetParent(mainPanel.transform, false);
             }
         }
         for (int i = 0; i < level.WidthX; i++)
@@ -97,7 +94,7 @@ public class TilesManager : MonoBehaviour
                 textInstantiateHorizontal.color = GetColorFromColorData(level.ColorsDataTiles[colorId]);
                 textInstantiateHorizontal.transform.position = new Vector3((offsetWidth / 2) + (maxVerticalHint + i) * basicTileScale, (offsetHeight / 2) + (level.HeightY + level.HintsDataHorizontal[i].Count - 1 - j) * basicTileScale);
                 textInstantiateHorizontal.GetComponent<RectTransform>().sizeDelta = new Vector2(basicTileScale, basicTileScale);
-                textInstantiateHorizontal.transform.SetParent(panel.transform, false);
+                textInstantiateHorizontal.transform.SetParent(mainPanel.transform, false);
             }
         }
         for (int i = 0; i < level.ColorsDataTiles.Count; i++)
