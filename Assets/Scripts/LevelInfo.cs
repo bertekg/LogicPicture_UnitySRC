@@ -14,7 +14,7 @@ public class LevelInfo : MonoBehaviour
     {
         LevelDataGame levelDataGame = FindObjectOfType<LevelDataGame>();
         levelWidth.text = "Width: " + levelDataGame.GetLevelWidth().ToString();
-        levelHeight.text = "Heigh: " + levelDataGame.GetLevelHeight().ToString();
+        levelHeight.text = "Height: " + levelDataGame.GetLevelHeight().ToString();
         levelTitle.text = "Title: " + levelDataGame.GetTitle();
         levelDescription.text = "Description:\n" + levelDataGame.GetDescription();
         finalImage.sprite = levelDataGame.GetFinalPictureSprite();

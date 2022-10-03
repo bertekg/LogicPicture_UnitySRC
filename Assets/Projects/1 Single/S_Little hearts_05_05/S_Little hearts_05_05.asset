@@ -19,7 +19,7 @@ MonoBehaviour:
       But that doesn''t mean
       it''s weak.'
   storyPL:
-    Title: "Ma\u0142e serduszka"
+    Title: "Ma\u0142e serduszko"
     Description: "Najmniejsze serduszko jakie mo\u017Ce stworzy\u0107.\r\nAle nie
       oznacza to \u017Ce jest s\u0142abiutkie."
   level: {fileID: 4900000, guid: 6b120e746932c5848ab00bb6d48ce3bb, type: 3}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <WidthX>5</WidthX>
+  <HeightY>5</HeightY>
+  <ColorDataNeutral>
+    <Red>192</Red>
+    <Green>192</Green>
+    <Blue>192</Blue>
+  </ColorDataNeutral>
+  <ColorDataBackground>
+    <Red>255</Red>
+    <Green>255</Green>
+    <Blue>255</Blue>
+  </ColorDataBackground>
+  <ColorDataMarker>
+    <Red>255</Red>
+    <Green>165</Green>
+    <Blue>0</Blue>
+  </ColorDataMarker>
+  <ColorsDataTiles>
+    <ColorData>
+      <Red>0</Red>
+      <Green>0</Green>
+      <Blue>0</Blue>
+    </ColorData>
+  </ColorsDataTiles>
+  <TilesData>
+    <TileData>
+      <PosX>1</PosX>
+      <PosY>1</PosY>
+      <ColorID>0</ColorID>
+    </TileData>
+    <TileData>
+      <PosX>3</PosX>
+      <PosY>1</PosY>
+      <ColorID>0</ColorID>
+    </TileData>
+    <TileData>
+      <PosX>1</PosX>
+      <PosY>2</PosY>
+      <ColorID>0</ColorID>
+    </TileData>
+    <TileData>
+      <PosX>3</PosX>
+      <PosY>2</PosY>
+      <ColorID>0</ColorID>
+    </TileData>
+  </TilesData>
+  <HintsDataVertical>
+    <ArrayOfHintData />
+    <ArrayOfHintData>
+      <HintData>
+        <Value>1</Value>
+        <ColorID>0</ColorID>
+      </HintData>
+      <HintData>
+        <Value>1</Value>
+        <ColorID>0</ColorID>
+      </HintData>
+    </ArrayOfHintData>
+    <ArrayOfHintData>
+      <HintData>
+        <Value>1</Value>
+        <ColorID>0</ColorID>
+      </HintData>
+      <HintData>
+        <Value>1</Value>
+        <ColorID>0</ColorID>
+      </HintData>
+    </ArrayOfHintData>
+    <ArrayOfHintData />
+    <ArrayOfHintData />
+  </HintsDataVertical>
+  <HintsDataHorizontal>
+    <ArrayOfHintData />
+    <ArrayOfHintData>
+      <HintData>
+        <Value>2</Value>
+        <ColorID>0</ColorID>
+      </HintData>
+    </ArrayOfHintData>
+    <ArrayOfHintData />
+    <ArrayOfHintData>
+      <HintData>
+        <Value>2</Value>
+        <ColorID>0</ColorID>
+      </HintData>
+    </ArrayOfHintData>
+    <ArrayOfHintData />
+  </HintsDataHorizontal>
+</Level>
