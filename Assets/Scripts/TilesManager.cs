@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Localization.SmartFormat;
 using UnityEngine.UI;
 
 public class TilesManager : MonoBehaviour
@@ -130,21 +133,34 @@ public class TilesManager : MonoBehaviour
 
         contentPanel.transform.SetParent(mainPanel.transform, false);
 
-        for (int i = 0; i < level.ColorsDataTiles.Count; i++)
+        for (byte i = 0; i < level.ColorsDataTiles.Count; i++)
         {
             Image colorInstantiate = (Image)Instantiate(colorPrefab);
             colorInstantiate.name = "Color_" + i.ToString();
             if (i > 0)
             {
-                colorInstantiate.color = GetColorFromColorData(level.ColorsDataTiles[i]);
+                colorInstantiate.color = Color.white;
             }
             else
             {
                 colorInstantiate.color = Color.red;
             }
-            colorInstantiate.GetComponent<SetColorInside>().SetColor(GetColorFromColorData(level.ColorsDataTiles[i]));
+            colorInstantiate.GetComponent<SetColors>().SetColorInside(GetColorFromColorData(level.ColorsDataTiles[i]));
+            colorInstantiate.GetComponent<Button>().onClick.AddListener(() => { FindObjectOfType<ColorMarkClick>().SetFull(colorInstantiate.name); });
             colorInstantiate.transform.SetParent(colorPanel.transform, false);
         }
+
+        Image blankInstantiate = (Image)Instantiate(colorPrefab);
+        blankInstantiate.name = "Blank";
+        blankInstantiate.GetComponent<SetColors>().SetColorInside(GetColorFromColorData(level.ColorDataNeutral));
+        blankInstantiate.GetComponent<SetColors>().SetColorFrame(Color.white);
+        blankInstantiate.GetComponent<ShowMark>().SetMark(true);
+        blankInstantiate.GetComponent<ShowMark>().SetCrossColor(GetColorFromColorData(level.ColorDataMarker));
+        blankInstantiate.GetComponent<Button>().onClick.AddListener(() => { FindObjectOfType<ColorMarkClick>().SetFull(blankInstantiate.name); });
+        blankInstantiate.transform.SetParent(colorPanel.transform, false);
+        FindObjectOfType<ColorMarkClick>().SetIsMark(true);
+        FindObjectOfType<ColorMarkClick>().SetColorSelectId(0);
+
     }
 
     private Color GetColorFromColorData(ColorData colorData)
